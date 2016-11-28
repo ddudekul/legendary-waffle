@@ -1,0 +1,10 @@
+- name: Task vars example
+  hosts: webnode
+  tasks:
+  - name: Copy hosts file to /tmp directory
+    copy: 
+      src: "{{SOURCE}}"
+      dest: "{{DESTINATION}}"
+    vars:
+      SOURCE: /etc/ansible/hosts
+      DESTINATION: /tmp/
