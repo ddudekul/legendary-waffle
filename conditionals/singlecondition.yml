@@ -1,0 +1,6 @@
+- hosts: mnode2
+  tasks:
+  - name: Shutdown Debian machines
+    command: /sbin/shutdown -t now
+    when: ansible_os_family == "Debian"
+

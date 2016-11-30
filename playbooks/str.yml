@@ -1,8 +1,0 @@
-- hosts: localhost
-  strategy: debug
-  gather_facts: no
-  vars:
-    var1: value1
-  tasks:
-    - name: wrong variable
-      ping: data={{ wrong_var }}

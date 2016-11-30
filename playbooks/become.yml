@@ -1,4 +1,0 @@
----
-- hosts: webservers
-  remote_user: yourname
-  become: yes

@@ -1,3 +1,0 @@
-tasks:
-  - name: create a virtual host file for {{ vhost }}
-    template: src=somefile.j2 dest=/etc/httpd/conf.d/{{ vhost }}

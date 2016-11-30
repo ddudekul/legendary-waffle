@@ -1,3 +1,0 @@
-tasks:
-  - name: disable selinux
-    command: /sbin/setenforce 0

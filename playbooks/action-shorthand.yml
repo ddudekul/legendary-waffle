@@ -1,2 +1,0 @@
-template: src=templates/foo.j2 dest=/etc/foo.conf
-action: template src=templates/foo.j2 dest=/etc/foo.conf

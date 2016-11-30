@@ -1,0 +1,1 @@
+- set_fact: one_fact="something" other_fact="{{ local_var }}"
