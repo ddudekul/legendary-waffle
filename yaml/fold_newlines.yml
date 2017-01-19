@@ -1,5 +1,5 @@
 ---
-fold_newlines: >
+fold_newlines: |
   This is
   a very long,
   long, long, long
