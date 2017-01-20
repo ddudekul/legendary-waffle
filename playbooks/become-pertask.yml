@@ -1,7 +1,15 @@
 ---
-- hosts: webservers
-  remote_user: yourname
+- hosts: mnode1
   tasks:
-    - service: name=nginx state=started
-      become: yes
-      become_method: sudo
+  - name: Install telnet
+    yum:
+     name: telnet
+     state: present
+    become: yes
+    become_method: sudo
+    become_user: root
+  - name: Ping the machine
+    ping:
+    become: yes
+    become_method: su
+    become_user: ec2-user
