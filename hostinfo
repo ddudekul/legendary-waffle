@@ -1,9 +1,0 @@
-[cnode]
-cnode1 ansible_host=192.168.2.35
-
-[mnodes]
-mnode1 ansible_host=192.168.2.36
-mnode2 ansible_host=192.168.2.37
-
-[webnode]
-webnode ansible_host=192.168.2.38
