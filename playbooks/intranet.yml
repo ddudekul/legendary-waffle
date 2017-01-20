@@ -1,5 +1,5 @@
 - name: intranet services
-  hosts: mnode4
+  hosts: mnode1
   become: yes
   tasks:
   - block:
@@ -30,10 +30,14 @@
         state: enabled
         immediate: yes
   - block: 
-    - name: Test html page
+    - name: Copy html content to index page
       copy: 
-        content: "Welcome to the KOGINTEX ANSIBLE TRAINING intranet webpaage\n"
+        content: "Welcome to the ANSIBLE HYDERABAD TRAINING intranet webpaage\n"
         dest: /var/www/html/index.html
+    - name: Test the the index page
+      uri:
+       url: http://localhost/index.html
+       status_code: 200
   
 
 

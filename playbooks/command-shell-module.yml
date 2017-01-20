@@ -1,3 +1,4 @@
-tasks:
+- hosts: mnode1
+  tasks:
   - name: disable selinux
     command: /sbin/setenforce 0
