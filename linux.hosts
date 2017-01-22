@@ -1,5 +1,6 @@
 [mnodes]
-mnode1 ansible_host=159.203.115.249
+mnode1 ansible_host=159.203.115.249 
 
 [local]
 cnode ansible_host=159.203.99.110
+

@@ -1,5 +1,5 @@
 - name: Block Vars Example
-  hosts: webnode
+  hosts: all
   tasks:
   - block:
     - name: Install Apache
