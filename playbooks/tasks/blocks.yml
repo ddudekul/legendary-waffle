@@ -1,26 +1,24 @@
 ---
-- hosts: mnode2
+- hosts: mnode1
   vars:
     maildir_path: /tmp/Maildir
     maildir: /home/student/maildir
     mail_package: postfix
     mail_service: postfix
-
   tasks:
   - block:
     - name: Create {{ maildir_path }}
-      copy:
-         src: "{{ maildir }}"
-         dest: "{{ maildir_path }}"
-         mode: 0755
+      file:
+       path: "{{maildir_path}}"
+       state: directory
     rescue:
     - name: Install mail packages
-      apt: 
+      yum: 
         name: "{{ item }}"
         state: latest
       with_items:
         - "{{ mail_package }}"
-        - dovecat
+        - dovecot
     always:
     - name: start mail services
       service: 
@@ -28,7 +26,7 @@
         state: started
       with_items:
         - "{{ mail_service }}"
-        - dovecat
+        - dovecot
       register: command_result
   - debug:
       var: command_result
