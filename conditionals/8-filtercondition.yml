@@ -1,0 +1,21 @@
+- hosts: all
+  tasks:
+  - name: Execute True Command
+    command: /bin/true
+    register: result
+    ignore_errors: True
+    when: ansible_os_family == "Darwin"
+  - debug: var=result
+
+
+  - name: Execute something command
+    command: /bin/something
+    when: result|failed
+
+  # In older versions of ansible use |success, now both are valid but succeeded uses the correct tense.
+  - name: execute something_else command
+    command: /bin/true
+    when: result|succeeded
+  - name: execute something_else from different directory
+    command: /bin/still/something_else
+    when: result|skipped

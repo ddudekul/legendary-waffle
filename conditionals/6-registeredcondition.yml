@@ -1,0 +1,18 @@
+- name: check registered variable for emptiness
+  hosts: all
+  vars:
+    MyDir: /tmp/test
+  tasks:
+  - name: Create test directory in /tmp
+    file:
+     path: "{{MyDir}}"
+     state: directory
+  - name: list contents of directory
+    command: ls /tmp/test
+    register: contents
+  - name: Display the Contents var value
+    debug:
+      var: contents
+  - name: check contents for emptiness
+    debug: msg=" {{MyDir}} Directory is empty"
+    when: contents.stdout == ""

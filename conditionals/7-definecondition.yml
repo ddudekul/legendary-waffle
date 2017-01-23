@@ -1,0 +1,7 @@
+- hosts: mnode2
+  tasks:
+    - shell: echo "I've got it and am not afraid to use it!"
+      when: foo is defined
+
+    - debug: msg="Bailing out. this play requires bar"
+      when: bar is defined

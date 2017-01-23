@@ -1,9 +1,9 @@
-- hosts: mnode1
+- hosts: all
   vars:
     epic: true
   tasks:
     - shell: echo "This certainly is epic!"
-      when: epic
+      when: not epic
   #tasks:
    # - shell: echo "This certainly isn't epic!"
     #  when: not epic

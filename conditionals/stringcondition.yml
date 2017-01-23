@@ -1,4 +1,0 @@
-- hosts: webnode
-  tasks:
-  - shell: echo "only on Red Hat 6, derivatives, and later"
-    when: ansible_os_family == "RedHat" and ansible_lsb.major_release|int >= 6

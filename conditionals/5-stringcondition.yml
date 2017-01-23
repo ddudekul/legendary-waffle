@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+  - name: install lsb_release
+    yum: 
+      name: redhat-lsb-core
+      state: latest
+    when: ansible_os_family == "RedHat"
+  - shell: echo "only on Red Hat 6, derivatives, and later"
+    when: ansible_os_family == "RedHat" and ansible_lsb.major_release >= 6

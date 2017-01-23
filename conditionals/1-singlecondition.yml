@@ -1,4 +1,4 @@
-- hosts: mnode2
+- hosts: all
   tasks:
   - name: Shutdown Debian machines
     command: /sbin/shutdown -t now
