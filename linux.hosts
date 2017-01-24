@@ -1,8 +1,7 @@
 [mnodes]
-mnode1 ansible_host=138.197.70.86
-mnode2 ansible_host=138.197.74.40
-mnode3 ansible_host=138.197.70.76
-mnode4 ansible_host=138.197.70.244
-mnode5 ansible_host=138.197.70.246
-mnode6 ansible_host=138.197.66.218
-mnode7 ansible_host=138.197.74.156
+mnode0 ansible_host=138.197.65.235
+mnode1 ansible_host=138.197.65.239
+mnode2 ansible_host=138.197.65.255
+
+[local]
+mnode0 ansible_host=138.197.65.235

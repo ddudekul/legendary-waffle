@@ -1,8 +1,10 @@
 ---
-- hosts: vagranthosts
+- hosts: all
+  vars:
+   User: " "
   tasks:
   - name: copy the template
     template:
-      src: ~/ktx/KTX/templates/welcome.j2
+      src: ~/legendary-waffle/playbooks/welcome.j2
       dest: /etc/motd
       mode: 0644
