@@ -3,22 +3,14 @@
       yum:
         name: "{{item}}"
         state: latest
-      with_items:
-       - vsftpd
-       - firewalld
-      tags:
-       - installpackages
+      with_items: "{{packages}}"
   - block:
     - name: Enable and run VSFTPD
       service: 
         name: "{{item}}"
         enabled: true
         state: started
-      with_items:
-       - vsftpd
-       - firewalld
-      tags:
-       - startservice
+      with_items: "{{packages}}"
   - block:
     - name: firewalld permits ftp service
       firewalld:

@@ -1,0 +1,7 @@
+---
+  - name: Include ftpserver.yml
+    include: ftpserver.yml
+    static: yes
+
+  - name: Include commaon tasks file
+    include: common.yml

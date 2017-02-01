@@ -1,0 +1,15 @@
+- name: Install FTP SERVER
+  hosts: mnodes
+  pre_tasks:
+  - name: Include ftp vars file
+    debug: msg="I am installing in inventory_hostname"
+
+  roles:
+   - mallik.accel
+
+  post_tasks:
+  - name: Install ftp client
+    yum:
+     name: lftp
+     state: present
+    delegate_to: mnode0
