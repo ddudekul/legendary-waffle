@@ -1,13 +1,11 @@
 ---
-- name: Create 3 users
-  hosts: mnode2
-  remote_user: student
-  become: yes
-  var_files:
+- name: Create users
+  hosts: mnode1
+  vars_files:
     - test.yml
   tasks:
   - name: Creating users from test.yml
     user: 
       name: "{{ item.name }}"
-      passwd: "{{ item.pw | password_hash('sha512') }}"
-    with_items: "{{ new_users }}"
+      password: "{{ item.pw | password_hash('sha512') }}"
+    with_items: "{{ newusers }}"
